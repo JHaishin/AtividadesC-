@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\limaj\\Documents\\GitHub\\AtividadesC-\\Atividade 7\\Atividade8\\Atividade8.csproj": {}
+    "C:\\Users\\limaj\\Desktop\\C#\\Atividade8-2\\Atividade8-2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\limaj\\Documents\\GitHub\\AtividadesC-\\Atividade 7\\Atividade8\\Atividade8.csproj": {
+    "C:\\Users\\limaj\\Desktop\\C#\\Atividade8-2\\Atividade8-2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\limaj\\Documents\\GitHub\\AtividadesC-\\Atividade 7\\Atividade8\\Atividade8.csproj",
-        "projectName": "Atividade8",
-        "projectPath": "C:\\Users\\limaj\\Documents\\GitHub\\AtividadesC-\\Atividade 7\\Atividade8\\Atividade8.csproj",
+        "projectUniqueName": "C:\\Users\\limaj\\Desktop\\C#\\Atividade8-2\\Atividade8-2.csproj",
+        "projectName": "Atividade8-2",
+        "projectPath": "C:\\Users\\limaj\\Desktop\\C#\\Atividade8-2\\Atividade8-2.csproj",
         "packagesPath": "C:\\Users\\limaj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\limaj\\Documents\\GitHub\\AtividadesC-\\Atividade 7\\Atividade8\\obj\\",
+        "outputPath": "C:\\Users\\limaj\\Desktop\\C#\\Atividade8-2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\limaj\\AppData\\Roaming\\NuGet\\NuGet.Config"

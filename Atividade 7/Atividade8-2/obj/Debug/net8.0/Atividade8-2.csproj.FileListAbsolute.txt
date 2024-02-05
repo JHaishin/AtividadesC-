@@ -1,0 +1,14 @@
+C:\Users\limaj\Desktop\C#\Atividade8-2\bin\Debug\net8.0\Atividade8-2.exe
+C:\Users\limaj\Desktop\C#\Atividade8-2\bin\Debug\net8.0\Atividade8-2.deps.json
+C:\Users\limaj\Desktop\C#\Atividade8-2\bin\Debug\net8.0\Atividade8-2.runtimeconfig.json
+C:\Users\limaj\Desktop\C#\Atividade8-2\bin\Debug\net8.0\Atividade8-2.dll
+C:\Users\limaj\Desktop\C#\Atividade8-2\bin\Debug\net8.0\Atividade8-2.pdb
+C:\Users\limaj\Desktop\C#\Atividade8-2\obj\Debug\net8.0\Atividade8-2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\limaj\Desktop\C#\Atividade8-2\obj\Debug\net8.0\Atividade8-2.AssemblyInfoInputs.cache
+C:\Users\limaj\Desktop\C#\Atividade8-2\obj\Debug\net8.0\Atividade8-2.AssemblyInfo.cs
+C:\Users\limaj\Desktop\C#\Atividade8-2\obj\Debug\net8.0\Atividade8-2.csproj.CoreCompileInputs.cache
+C:\Users\limaj\Desktop\C#\Atividade8-2\obj\Debug\net8.0\Atividade8-2.dll
+C:\Users\limaj\Desktop\C#\Atividade8-2\obj\Debug\net8.0\refint\Atividade8-2.dll
+C:\Users\limaj\Desktop\C#\Atividade8-2\obj\Debug\net8.0\Atividade8-2.pdb
+C:\Users\limaj\Desktop\C#\Atividade8-2\obj\Debug\net8.0\Atividade8-2.genruntimeconfig.cache
+C:\Users\limaj\Desktop\C#\Atividade8-2\obj\Debug\net8.0\ref\Atividade8-2.dll
