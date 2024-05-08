@@ -1,104 +1,93 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CalculatorLibrary;
-
-namespace CalculatorTest
+[TestFixture]
+public class EmailValidatorTests
 {
-    [TestClass]
-    public class CalculatorTests
+    private EmailValidator validator;
+
+    [SetUp]
+    public void SetUp()
     {
-        private readonly ICalculator _calculator;
+        validator = new EmailValidator();
+    }
 
-        public CalculatorTests()
-        {
-            _calculator = new Calculator();
-        }
+    [Test]
+    public void IsValidEmailFormat_ValidEmail_ReturnsTrue()
+    {
+        // Arrange
+        string email = "example@example.com";
 
-        [TestMethod]
-        public void TestAdd()
-        {
-            Assert.AreEqual(8, _calculator.Add(5, 3));
-        }
+        // Act
+        bool result = validator.IsValidEmailFormat(email);
 
-        [TestMethod]
-        public void TestSubtract()
-        {
-            Assert.AreEqual(2, _calculator.Subtract(5, 3));
-        }
+        // Assert
+        Assert.IsTrue(result);
+    }
 
-        [TestMethod]
-        public void TestMultiply()
-        {
-            Assert.AreEqual(15, _calculator.Multiply(5, 3));
-        }
+    [Test]
+    public void IsValidEmailFormat_InvalidEmail_ReturnsFalse()
+    {
+        // Arrange
+        string email = "invalidemail";
 
-        [TestMethod]
-        public void TestDivide()
-        {
-            Assert.AreEqual(2, _calculator.Divide(10, 5));
-        }
+        // Act
+        bool result = validator.IsValidEmailFormat(email);
 
-        [TestMethod]
-        [ExpectedException(typeof(DivideByZeroException))]
-        public void TestDivideByZero()
-        {
-            _calculator.Divide(10, 0);
-        }
-
-        [TestMethod]
-        public void TestIsPrime()
-        {
-            Assert.IsTrue(_calculator.IsPrime(7));
-            Assert.IsFalse(_calculator.IsPrime(9));
-        }
+        // Assert
+        Assert.IsFalse(result);
     }
 }
 
-
-namespace CalculatorLibrary
+[Test]
+public void IsDomainActive_ActiveDomain_ReturnsTrue()
 {
-    public interface ICalculator
-    {
-        int Add(int a, int b);
-        int Subtract(int a, int b);
-        int Multiply(int a, int b);
-        int Divide(int a, int b);
-        bool IsPrime(int number);
-    }
+    // Arrange
+    string email = "example@example.com";
 
-    public class Calculator : ICalculator
-    {
-        public int Add(int a, int b) => a + b;
+    // Act
+    bool result = validator.IsDomainActive(email);
 
-        public int Subtract(int a, int b) => a - b;
+    // Assert
+    Assert.IsTrue(result);
+}
 
-        public int Multiply(int a, int b) => a * b;
+[Test]
+public void IsDomainActive_InactiveDomain_ReturnsFalse()
+{
+    // Arrange
+    string email = "example@nonexistentdomain.com";
 
-        public int Divide(int a, int b)
-        {
-            if (b == 0)
-            {
-                throw new DivideByZeroException("Cannot divide by zero");
-            }
-            return a / b;
-        }
+    // Act
+    bool result = validator.IsDomainActive(email);
 
-        public bool IsPrime(int number)
-        {
-            if (number <= 1)
-            {
-                return false;
-            }
-            for (int i = 2; i < number; i++)
-            {
-                if (number % i == 0)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-    }
+    // Assert
+    Assert.IsFalse(result);
+}
+
+
+[Test]
+public void IsMailServerResponding_ServerResponding_ReturnsTrue()
+{
+    // Arrange
+    string email = "example@example.com";
+
+    // Act
+    bool result = validator.IsMailServerResponding(email);
+
+    // Assert
+    Assert.IsTrue(result);
+}
+
+[Test]
+public void IsMailServerResponding_ServerNotResponding_ReturnsFalse()
+{
+    // Arrange
+    string email = "example@nonexistentdomain.com";
+
+    // Act
+    bool result = validator.IsMailServerResponding(email);
+
+    // Assert
+    Assert.IsFalse(result);
 }
 
 
