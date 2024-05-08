@@ -1,93 +1,115 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using NUnit.Framework;
+
 [TestFixture]
-public class EmailValidatorTests
+public class AreaCalculatorTests
 {
-    private EmailValidator validator;
-
-    [SetUp]
-    public void SetUp()
+    [Test]
+    public void CalculateSquareArea_ValidSideLength_ReturnsCorrectArea()
     {
-        validator = new EmailValidator();
+        // Arrange
+        double sideLength = 5;
+        Square square = new Square(sideLength);
+
+        // Act
+        double area = square.Area();
+
+        // Assert
+        Assert.AreEqual(25, area);
     }
 
     [Test]
-    public void IsValidEmailFormat_ValidEmail_ReturnsTrue()
+    public void CalculateTriangleArea_ValidBaseAndHeight_ReturnsCorrectArea()
     {
         // Arrange
-        string email = "example@example.com";
+        double @base = 6;
+        double height = 4;
+        Triangle triangle = new Triangle(@base, height);
 
         // Act
-        bool result = validator.IsValidEmailFormat(email);
+        double area = triangle.Area();
 
         // Assert
-        Assert.IsTrue(result);
+        Assert.AreEqual(12, area);
     }
 
     [Test]
-    public void IsValidEmailFormat_InvalidEmail_ReturnsFalse()
+    public void CalculateCircleArea_ValidRadius_ReturnsCorrectArea()
     {
         // Arrange
-        string email = "invalidemail";
+        double radius = 3;
+        Circle circle = new Circle(radius);
 
         // Act
-        bool result = validator.IsValidEmailFormat(email);
+        double area = circle.Area();
 
         // Assert
-        Assert.IsFalse(result);
+        Assert.AreEqual(Math.PI * radius * radius, area);
     }
 }
 
-[Test]
-public void IsDomainActive_ActiveDomain_ReturnsTrue()
+using System;
+
+public class Square
 {
-    // Arrange
-    string email = "example@example.com";
+    private readonly double sideLength;
 
-    // Act
-    bool result = validator.IsDomainActive(email);
+    public Square(double sideLength)
+    {
+        this.sideLength = sideLength;
+    }
 
-    // Assert
-    Assert.IsTrue(result);
+    public double Area()
+    {
+        return sideLength * sideLength;
+    }
 }
 
-[Test]
-public void IsDomainActive_InactiveDomain_ReturnsFalse()
+public class Triangle
 {
-    // Arrange
-    string email = "example@nonexistentdomain.com";
+    private readonly double @base;
+    private readonly double height;
 
-    // Act
-    bool result = validator.IsDomainActive(email);
+    public Triangle(double @base, double height)
+    {
+        this.@base = @base;
+        this.height = height;
+    }
 
-    // Assert
-    Assert.IsFalse(result);
+    public double Area()
+    {
+        return 0.5 * @base * height;
+    }
 }
 
-
-[Test]
-public void IsMailServerResponding_ServerResponding_ReturnsTrue()
+public class Circle
 {
-    // Arrange
-    string email = "example@example.com";
+    private readonly double radius;
 
-    // Act
-    bool result = validator.IsMailServerResponding(email);
+    public Circle(double radius)
+    {
+        this.radius = radius;
+    }
 
-    // Assert
-    Assert.IsTrue(result);
+    public double Area()
+    {
+        return Math.PI * radius * radius;
+    }
 }
 
-[Test]
-public void IsMailServerResponding_ServerNotResponding_ReturnsFalse()
+public static class AreaCalculator
 {
-    // Arrange
-    string email = "example@nonexistentdomain.com";
+    public static double CalculateSquareArea(double sideLength)
+    {
+        return sideLength * sideLength;
+    }
 
-    // Act
-    bool result = validator.IsMailServerResponding(email);
+    public static double CalculateTriangleArea(double @base, double height)
+    {
+        return 0.5 * @base * height;
+    }
 
-    // Assert
-    Assert.IsFalse(result);
+    public static double CalculateCircleArea(double radius)
+    {
+        return Math.PI * radius * radius;
+    }
 }
-
-
